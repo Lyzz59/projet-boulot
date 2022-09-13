@@ -1,0 +1,43 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="section-dashboard">
+    <h1>Tableau de bord</h1>
+    <h2>Suivi de production :</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Projets</td>
+                <td>Temps vendu en jour</td>
+                <td>Temps consommé en jours</td>
+                <td>Avancement</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of projects$ | async">
+                <td data-label="Projets">{{ project.name }}</td>
+                <td data-label="Tps vdu. jrs">{{ project.timeSold }}</td>
+                <td data-label="Tps coms. jrs">{{ project.timeConsumed ? project.timeConsumed : 0 }}</td>
+                <td data-label="%" class="{{ project.timeDifference > 100 ? 'positif' : null }}">
+                    {{ project.timeDifference ? project.timeDifference : 0 }} %
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Emploi du temps:</h2>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td *ngFor="let day of weekDays">{{day | customDate }}</td>
+
+                <td>total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users$ | async">
+                <td>{{user.isActive? user.firstName:null}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-footer></app-footer>

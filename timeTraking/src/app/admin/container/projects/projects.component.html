@@ -1,0 +1,26 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="section-projects">
+    <div>
+        <button class="inscription" (click)="showModal()">Ajouter un projet</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Nom</td>
+                <td>Client</td>
+                <td>Temps vendu en jours</td>
+                <td>Dashboard</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of project$ | async">
+                <td>{{project.name}}</td>
+                <td>{{project.client.company}}</td>
+                <td>{{project.timeSold}}</td>
+                <td>{{project.isActive? "Actif":"Pas actif"}}</td>
+                <td><button class="modification" (click)="showModal(project)">Modifier</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

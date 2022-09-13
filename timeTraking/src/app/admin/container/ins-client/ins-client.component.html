@@ -1,0 +1,13 @@
+<form [formGroup]="submitClient" (ngSubmit)="submit()">
+    <h1>{{edit? "Modifier" : "Inscription client"}}</h1>
+    <div class="inputs">
+        <input type="company" formControlName="company" placeholder="Compagnie" required>
+        <input type="phone" formControlName="phone" placeholder="Téléphone" required>
+        <input type="email" formControlName="email" placeholder="Email" required>
+        <input type="address" formControlName="address" placeholder="Adresse postale" required>
+    </div>
+    <div class="btn">
+        <button class="envoyer" type="submit">{{edit? "Modifier" : "Inscrire"}}</button>
+        <button *ngIf="edit" type="submit" class="delete" (click)="handleDelete()">Supprimer</button>
+    </div>
+</form>

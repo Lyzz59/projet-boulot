@@ -1,0 +1,36 @@
+<form [formGroup]="formProject" (ngSubmit)="submit()">
+
+    <h1>{{edit? "Modifier" : "Ajouter un projet"}}</h1>
+
+    <div class="inputs">
+        <label for="name">Nom du projet</label>
+        <input type="name" formControlName="name" placeholder="Nom du projet" required="required">
+
+        <label for="clientCompany">Client concerné</label>
+        <select name="clientCompany" id="clientCompany" formControlName="clientId">
+                <option value="{{ client.id }}" *ngFor="let client of clients$ | async">
+                    {{ client.company }}
+                </option>
+        </select>
+
+        <label for="timeSold">Temps vendu</label>
+        <input type="timeSold" formControlName="timeSold" placeholder="Temps vendu">
+
+        <div class="box">
+            <label class="intitule">Actif</label>
+            <div>
+                <label class="isActive_oui" for="isActive_oui">Oui</label>
+                <input type="radio" [value]="true" name="isActive" id="isActive_oui" formControlName="isActive">
+            </div>
+            <div>
+                <label class="isActive_non" for="isActive_non">Non</label>
+                <input type="radio" [value]="false" name="isActive" id="isActive_non" formControlName="isActive">
+            </div>
+        </div>
+
+        <div class="btn">
+            <button [formGroup]="formProject" class="envoyer" type="submit">{{edit? "Modifier" : "Inscrire"}}</button>
+            <button *ngIf="edit" type="submit" class="delete" (click)="handleDelete()">Supprimer</button>
+        </div>
+    </div>
+</form>

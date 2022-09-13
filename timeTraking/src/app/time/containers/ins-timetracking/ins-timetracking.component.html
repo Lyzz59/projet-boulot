@@ -1,0 +1,30 @@
+<form [formGroup]="formTime" (ngSubmit)="submit()">
+    <h1>{{ edit ? "Modifier" : "Renseigner le temps" }}</h1>
+    <div class="inputs">
+        <label for="createdAt">Date</label>
+        <input id="date" type="date" max="{{ dateMax }}" formControlName="createdAt" placeholder="Date" required/>
+
+        <label for="project">Projets</label>
+        <select name="project" id="project" formControlName="projectId">
+            <option value="{{ project.id }}" *ngFor="let project of projects$ | async">
+                {{ project.name }}
+            </option>
+        </select>
+
+        <label for="typology">Types</label>
+        <select name="typology" id="typology" formControlName="typologyId">
+
+            <option value="{{ type_project.id }}" *ngFor="let type_project of type_projects$ | async">
+                {{ type_project.name }}
+            </option>
+        </select>
+        <label for="time_minuts">Temps</label>
+        <input id="time_minuts" type="time" formControlName="valeur" />
+        <label for="description">Description</label>
+        <textarea id="description" name="description" formControlName="description"></textarea>
+    </div>
+    <div class="btn">
+        <button class="envoyer" type="submit">{{ edit ? "Modifier" : "Renseigner" }}</button>
+        <button *ngIf="edit" type="submit" class="delete" (click)="handleDelete()">Supprimer</button>
+    </div>
+</form>

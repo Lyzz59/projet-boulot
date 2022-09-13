@@ -1,0 +1,34 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="section-times">
+    <div>
+        <button class="inscription" (click)="showModal()">Renseigner un temps</button>
+        <form [formGroup]="formDate">
+            <label for="">Du</label>
+            <input type="date" formControlName="selectDate">
+            <label for="">au</label>
+            <input type="date" formControlName="selectDate">
+
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Date</td>
+                <td>Project</td>
+                <td>Type</td>
+                <td>Temps en minute</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let timetracking of timeTracking$ |async ">
+                <td>{{timetracking.createdAt | formatDate}}</td>
+                <td>{{timetracking.project.name}}</td>
+                <td>{{timetracking.typology.name}}</td>
+                <td>{{timetracking.valeur}}</td>
+                <td>{{timetracking.description}}</td>
+                <td><button class="modification" (click)="showModal(timetracking)">Modifier</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

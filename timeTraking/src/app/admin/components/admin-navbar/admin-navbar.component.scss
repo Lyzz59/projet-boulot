@@ -1,0 +1,226 @@
+    header {
+        display: flex;
+        justify-content: space-between;
+        background-image: url(../../../../assets/fond-bleu-nav.svg);
+        height: 100px;
+        padding: 0 95px;
+        align-items: center;
+        nav {
+            margin-right: 50px;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li,
+        a {
+            font-family: "Poppins", Sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .logo {
+            max-width: 15%;
+            cursor: pointer;
+        }
+        .nav_links {
+            list-style: none;
+        }
+        .nav_links li {
+            display: inline-block;
+            padding: 0px 20px;
+        }
+        .nav_links li a {
+            transition: all 0.3s ease 0s;
+        }
+        .nav_links li a:hover {
+            color: aqua;
+        }
+        button {
+            background-color: transparent;
+            background-image: url(../../../../assets/backgroundbtnred.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            font-family: "Poppins", Sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            height: 35px;
+            width: 190px;
+            border: none;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover {
+            background-color: transparent;
+            background-image: url(../../../../assets/backgroundbtnredfoncer.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: 0.5s;
+        }
+    }
+    
+    @media screen and (min-width: 1025px) and (max-width: 1200px) {
+        header {
+            padding: 0 50px;
+        }
+        .logo {
+            max-width: 20%!important;
+        }
+    }
+    
+    @media screen and (min-width: 850px) and (max-width: 1024px) {
+        header {
+            padding: 0 50px!important;
+            nav {
+                margin-right: 20px;
+            }
+        }
+        .logo {
+            max-width: 20%!important;
+        }
+        nav {
+            margin: none;
+            ul li a {
+                font-size: 17px!important;
+            }
+        }
+        button {
+            font-size: 17px!important;
+            width: 160px!important;
+        }
+    }
+    
+    @media screen and (min-width: 769px) and (max-width: 849px) {
+        header {
+            padding: 0 40px!important;
+            nav {
+                margin-right: 20px;
+            }
+        }
+        .logo {
+            max-width: 23%!important;
+        }
+        nav {
+            margin: none;
+            ul li {
+                padding: 0px 12px!important;
+            }
+            ul li a {
+                font-size: 17px!important;
+            }
+        }
+        button {
+            font-size: 17px!important;
+            height: 30px!important;
+            width: 145px!important;
+        }
+    }
+    
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        header {
+            padding: 0 65px;
+            .logo {
+                min-width: 35%;
+            }
+        }
+        .menu {
+            padding-top: 50px;
+        }
+        .menu_icon {
+            margin: 50px;
+        }
+        .menu_icon span {
+            cursor: pointer;
+            margin: 5px;
+            width: 32px;
+            height: 3px;
+            background-color: #fff;
+            display: block;
+        }
+        .menu_icon_Class span:nth-child(2) {
+            display: none;
+        }
+        .nav-left {
+            flex-direction: column;
+            position: absolute;
+            right: -280px;
+            top: 99px;
+            width: 280px;
+            height: 90vh;
+            transition: 0.4s ease-in-out;
+            background: url(../../../../assets/fond-bleu-nav.svg);
+            nav {
+                margin: 0;
+                text-align-last: center;
+            }
+            ul li {
+                display: block;
+                text-align: left;
+                margin: 0;
+                padding: 10px 0 26px;
+            }
+        }
+        .menuClass {
+            right: 0 !important;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+        header {
+            padding: 0 20px;
+            .logo {
+                min-width: 50%;
+            }
+        }
+        .menu {
+            padding-top: 50px;
+        }
+        .menu_icon {
+            margin: 18px;
+        }
+        .menu_icon span {
+            cursor: pointer;
+            margin: 4px;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            display: block;
+        }
+        .menu_icon_Class span:nth-child(2) {
+            display: none;
+        }
+        .nav-left {
+            flex-direction: column;
+            position: absolute;
+            right: -280px;
+            top: 99px;
+            width: 280px;
+            height: 90vh;
+            transition: 0.4s ease-in-out;
+            background: url(../../../../assets/fond-bleu-nav.svg);
+            nav {
+                margin: 0;
+                text-align-last: center;
+            }
+            ul li {
+                display: block;
+                text-align: left;
+                margin: 0;
+                padding: 10px 0 26px;
+            }
+        }
+        .menuClass {
+            right: 0 !important;
+            transition: 0.4s ease-in-out;
+        }
+    }

@@ -1,0 +1,19 @@
+<header>
+    <img class="logo" src="assets/logo-capcode.svg" alt="logo" routerLink="/admin/home-admin" />
+    <div class="menu_icon" (click)="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-left" [class.menuClass]="menuVariable">
+        <nav *ngIf="isAdmin" class="menu">
+            <ul class="nav_links">
+                <li><a mat button routerLink="/admin/membres">Membres</a></li>
+                <li><a mat button routerLink="/admin/clients">Clients</a></li>
+                <li><a mat button routerLink="/admin/projects">Projets</a></li>
+                <li><a mat button routerLink="/time/timetracking">Temps</a></li>
+            </ul>
+        </nav>
+        <button (click)=logout()>Déconnexion</button>
+    </div>
+</header>

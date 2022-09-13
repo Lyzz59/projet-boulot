@@ -1,0 +1,30 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="section-membres">
+    <div>
+        <button class="inscription" (click)="showModal()">Inscrire un membre</button>
+        <input type="search" id="site-search" name="q" placeholder="Rechercher...">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Email</td>
+                <td>Rôle</td>
+                <td>Actif</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users$ | async">
+                <td>{{user.lastName}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <div *ngFor="let role of user.roles">{{role.label}}</div>
+                </td>
+                <td>{{user.isActive? "Actif":"Pas actif"}}</td>
+                <td><button class="modification" (click)="showModal(user)">Modifier</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

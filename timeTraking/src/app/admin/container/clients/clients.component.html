@@ -1,0 +1,26 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="section-clients">
+    <div>
+        <button class="inscription" (click)="showModal()">Inscrire un client</button>
+        <input type="search" id="site-search" name="q" placeholder="Rechercher...">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Compagnie</td>
+                <td>Téléphone</td>
+                <td>Email</td>
+                <td>Adresse</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients$ |async ">
+                <td>{{client.company}}</td>
+                <td>{{client.phone}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.address}}</td>
+                <td><button class="modification" (click)="showModal(client)">Modifier</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
